@@ -704,7 +704,7 @@
                                 </connections>
                             </wkWebView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mf8-y9-bGJ">
-                                <rect key="frame" x="399" y="-1" width="82" height="32"/>
+                                <rect key="frame" x="103" y="-1" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SD3-q1-k9h">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -714,7 +714,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CuH-8E-6q4">
-                                <rect key="frame" x="310" y="-1" width="89" height="32"/>
+                                <rect key="frame" x="14" y="-1" width="89" height="32"/>
                                 <buttonCell key="cell" type="push" title="Log Out" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="san-e4-8oN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -723,27 +723,13 @@
                                     <action selector="logOutButtonPressed:" target="XfG-lQ-9wD" id="7i6-6L-y6T"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J6t-3N-7jf">
-                                <rect key="frame" x="7" y="8" width="39" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="gEb-S0-7q3"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Zoom" id="MgL-9J-uAr">
+                            <button verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ooU-38-AuK">
+                                <rect key="frame" x="416" y="-1" width="50" height="32"/>
+                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="only" alignment="center" state="on" borderStyle="border" inset="2" id="gXj-OK-eKR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ePQ-QV-ayq">
-                                <rect key="frame" x="50" y="6" width="96" height="19"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="eIw-rY-ani"/>
-                                </constraints>
-                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="0.25" maxValue="1.5" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="S05-P8-Caa"/>
-                                <connections>
-                                    <action selector="handleZoomSlider:" target="XfG-lQ-9wD" id="z5s-ym-kwy"/>
-                                </connections>
-                            </slider>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Qw7-br-9Ul" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="2Ks-UB-hYs"/>
@@ -751,18 +737,15 @@
                             <constraint firstItem="mf8-y9-bGJ" firstAttribute="leading" secondItem="CuH-8E-6q4" secondAttribute="trailing" constant="12" id="45M-9c-eBy"/>
                             <constraint firstAttribute="trailing" secondItem="Qw7-br-9Ul" secondAttribute="trailing" id="d0E-JY-oB2"/>
                             <constraint firstItem="CuH-8E-6q4" firstAttribute="top" secondItem="Qw7-br-9Ul" secondAttribute="bottom" constant="5" id="fMW-uA-Ujz"/>
-                            <constraint firstItem="ePQ-QV-ayq" firstAttribute="leading" secondItem="J6t-3N-7jf" secondAttribute="trailing" constant="8" id="gna-fp-SYe"/>
-                            <constraint firstAttribute="bottom" secondItem="J6t-3N-7jf" secondAttribute="bottom" constant="8" id="ocX-nj-6jj"/>
-                            <constraint firstItem="ePQ-QV-ayq" firstAttribute="baseline" secondItem="J6t-3N-7jf" secondAttribute="baseline" id="r12-iz-qfq"/>
-                            <constraint firstAttribute="bottom" secondItem="mf8-y9-bGJ" secondAttribute="bottom" constant="6" id="sNZ-A9-rg5"/>
-                            <constraint firstAttribute="trailing" secondItem="mf8-y9-bGJ" secondAttribute="trailing" constant="5" id="uBC-qe-sDn"/>
+                            <constraint firstItem="CuH-8E-6q4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="jJj-1Y-K1I"/>
+                            <constraint firstItem="ooU-38-AuK" firstAttribute="centerY" secondItem="mf8-y9-bGJ" secondAttribute="centerY" id="kC2-wq-0Xf"/>
+                            <constraint firstAttribute="trailing" secondItem="ooU-38-AuK" secondAttribute="trailing" constant="20" id="mEm-p2-IDx"/>
                             <constraint firstAttribute="bottom" secondItem="CuH-8E-6q4" secondAttribute="bottom" constant="6" id="xv8-gS-NE7"/>
-                            <constraint firstItem="J6t-3N-7jf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="9" id="zb4-64-HSi"/>
+                            <constraint firstItem="mf8-y9-bGJ" firstAttribute="centerY" secondItem="CuH-8E-6q4" secondAttribute="centerY" id="ySh-fv-Jiq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="webView" destination="Qw7-br-9Ul" id="aIT-5B-O1B"/>
-                        <outlet property="zoomLabel" destination="J6t-3N-7jf" id="H6q-nc-2eh"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -770,4 +753,7 @@
             <point key="canvasLocation" x="75" y="767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+    </resources>
 </document>

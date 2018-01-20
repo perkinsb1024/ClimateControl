@@ -5,6 +5,9 @@
 //  Created by Ben Perkins on 12/28/17.
 //  Copyright © 2017 Ben Perkins. All rights reserved.
 //
+// Thanks to the following tutorials:
+//  - Make a menubar app: https://www.raywenderlich.com/165853/menus-popovers-menu-bar-apps-macos
+//  - Launch program at startup: https://theswiftdev.com/2017/10/27/how-to-launch-a-macos-app-at-login/
 
 import Cocoa
 import WebKit
@@ -19,7 +22,6 @@ class ClimateViewController: NSViewController, WKUIDelegate, WKNavigationDelegat
         loadWebPage(withUrl: "https://home.nest.com")
         //loadWebPage(withUrl: "http://ryanve.com/lab/dimensions/")
         webView.allowsMagnification = true
-        
     }
     
     func loadWebPage(withUrl string: String) {
@@ -29,7 +31,6 @@ class ClimateViewController: NSViewController, WKUIDelegate, WKNavigationDelegat
             return;
         }
         webView.load(URLRequest(url: safeUrl))
-        
     }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
