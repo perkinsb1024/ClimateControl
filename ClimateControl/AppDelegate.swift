@@ -9,6 +9,10 @@
 import Cocoa
 import ServiceManagement
 
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
@@ -26,15 +30,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 strongSelf.closePopover(sender: event)
             }
         }
+        
+        let launcherAppId = "com.benperkins.ClimateLauncher"
+        let runningApps = NSWorkspace.shared.runningApplications
+        let launcherIsRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
+        
+        SMLoginItemSetEnabled(launcherAppId as CFString, true)
+
+        if launcherIsRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher,
+                                                         object: Bundle.main.bundleIdentifier!)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-//
-//    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-//        return true
-//    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return false
+    }
     
     @objc func togglePopover(_ sender: Any?) {
         if popover.isShown {
