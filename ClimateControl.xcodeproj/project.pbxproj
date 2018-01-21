@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DD14F583200F1FB400B4D331 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD14F582200F1FB400B4D331 /* EventMonitor.swift */; };
+		DD3C5132201404D0009548D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C5131201404D0009548D1 /* AppDelegate.swift */; };
+		DD3C5136201404D0009548D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3C5135201404D0009548D1 /* Assets.xcassets */; };
+		DD3C5139201404D0009548D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3C5137201404D0009548D1 /* Main.storyboard */; };
+		DD3C5143201405FA009548D1 /* ClimateLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = DD3C512F201404D0009548D1 /* ClimateLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD3C514620140631009548D1 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3C514520140631009548D1 /* ServiceManagement.framework */; };
 		DD9695991FF550DB00F9AAC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9695981FF550DB00F9AAC3 /* AppDelegate.swift */; };
 		DD96959B1FF550DB00F9AAC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD96959A1FF550DB00F9AAC3 /* ViewController.swift */; };
 		DD96959D1FF550DB00F9AAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD96959C1FF550DB00F9AAC3 /* Assets.xcassets */; };
@@ -34,8 +39,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DD3C5142201405E8009548D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				DD3C5143201405FA009548D1 /* ClimateLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DD14F582200F1FB400B4D331 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		DD3C512F201404D0009548D1 /* ClimateLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimateLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3C5131201404D0009548D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD3C5135201404D0009548D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD3C5138201404D0009548D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD3C513A201404D0009548D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3C513B201404D0009548D1 /* ClimateLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClimateLauncher.entitlements; sourceTree = "<group>"; };
+		DD3C514520140631009548D1 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		DD9695951FF550DB00F9AAC3 /* ClimateControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimateControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9695981FF550DB00F9AAC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD96959A1FF550DB00F9AAC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,10 +78,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD3C512C201404D0009548D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD9695921FF550DB00F9AAC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3C514620140631009548D1 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,13 +110,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD3C5130201404D0009548D1 /* ClimateLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				DD3C5131201404D0009548D1 /* AppDelegate.swift */,
+				DD3C5135201404D0009548D1 /* Assets.xcassets */,
+				DD3C5137201404D0009548D1 /* Main.storyboard */,
+				DD3C513A201404D0009548D1 /* Info.plist */,
+				DD3C513B201404D0009548D1 /* ClimateLauncher.entitlements */,
+			);
+			path = ClimateLauncher;
+			sourceTree = "<group>";
+		};
+		DD3C514420140630009548D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD3C514520140631009548D1 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD96958C1FF550DB00F9AAC3 = {
 			isa = PBXGroup;
 			children = (
 				DD9695971FF550DB00F9AAC3 /* ClimateControl */,
 				DD9695AA1FF550DB00F9AAC3 /* ClimateControlTests */,
 				DD9695B51FF550DB00F9AAC3 /* ClimateControlUITests */,
+				DD3C5130201404D0009548D1 /* ClimateLauncher */,
 				DD9695961FF550DB00F9AAC3 /* Products */,
+				DD3C514420140630009548D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +148,7 @@
 				DD9695951FF550DB00F9AAC3 /* ClimateControl.app */,
 				DD9695A71FF550DB00F9AAC3 /* ClimateControlTests.xctest */,
 				DD9695B21FF550DB00F9AAC3 /* ClimateControlUITests.xctest */,
+				DD3C512F201404D0009548D1 /* ClimateLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +189,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DD3C512E201404D0009548D1 /* ClimateLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3C513E201404D0009548D1 /* Build configuration list for PBXNativeTarget "ClimateLauncher" */;
+			buildPhases = (
+				DD3C512B201404D0009548D1 /* Sources */,
+				DD3C512C201404D0009548D1 /* Frameworks */,
+				DD3C512D201404D0009548D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClimateLauncher;
+			productName = ClimateLauncher;
+			productReference = DD3C512F201404D0009548D1 /* ClimateLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DD9695941FF550DB00F9AAC3 /* ClimateControl */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD9695BB1FF550DC00F9AAC3 /* Build configuration list for PBXNativeTarget "ClimateControl" */;
@@ -140,6 +213,7 @@
 				DD9695911FF550DB00F9AAC3 /* Sources */,
 				DD9695921FF550DB00F9AAC3 /* Frameworks */,
 				DD9695931FF550DB00F9AAC3 /* Resources */,
+				DD3C5142201405E8009548D1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -196,6 +270,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Ben Perkins";
 				TargetAttributes = {
+					DD3C512E201404D0009548D1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					DD9695941FF550DB00F9AAC3 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -233,11 +311,21 @@
 				DD9695941FF550DB00F9AAC3 /* ClimateControl */,
 				DD9695A61FF550DB00F9AAC3 /* ClimateControlTests */,
 				DD9695B11FF550DB00F9AAC3 /* ClimateControlUITests */,
+				DD3C512E201404D0009548D1 /* ClimateLauncher */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD3C512D201404D0009548D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3C5136201404D0009548D1 /* Assets.xcassets in Resources */,
+				DD3C5139201404D0009548D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD9695931FF550DB00F9AAC3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +352,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DD3C512B201404D0009548D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3C5132201404D0009548D1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DD9695911FF550DB00F9AAC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +403,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DD3C5137201404D0009548D1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD3C5138201404D0009548D1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		DD96959E1FF550DB00F9AAC3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,6 +422,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DD3C513C201404D0009548D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClimateLauncher/ClimateLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ClimateLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benperkins.ClimateLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		DD3C513D201404D0009548D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClimateLauncher/ClimateLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ClimateLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.benperkins.ClimateLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		DD9695B91FF550DC00F9AAC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -519,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD3C513E201404D0009548D1 /* Build configuration list for PBXNativeTarget "ClimateLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3C513C201404D0009548D1 /* Debug */,
+				DD3C513D201404D0009548D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DD9695901FF550DB00F9AAC3 /* Build configuration list for PBXProject "ClimateControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

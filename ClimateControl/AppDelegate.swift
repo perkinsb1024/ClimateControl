@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import ServiceManagement
 
 extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
@@ -29,17 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let strongSelf = self, strongSelf.popover.isShown {
                 strongSelf.closePopover(sender: event)
             }
-        }
-        
-        let launcherAppId = "com.benperkins.ClimateLauncher"
-        let runningApps = NSWorkspace.shared.runningApplications
-        let launcherIsRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
-        
-        SMLoginItemSetEnabled(launcherAppId as CFString, true)
-
-        if launcherIsRunning {
-            DistributedNotificationCenter.default().post(name: .killLauncher,
-                                                         object: Bundle.main.bundleIdentifier!)
         }
     }
 
