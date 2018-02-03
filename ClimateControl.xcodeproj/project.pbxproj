@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD14F583200F1FB400B4D331 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD14F582200F1FB400B4D331 /* EventMonitor.swift */; };
+		DD2DDE092026348C001FC804 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2DDE082026348C001FC804 /* WebKit.framework */; };
 		DD3C5132201404D0009548D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C5131201404D0009548D1 /* AppDelegate.swift */; };
 		DD3C5136201404D0009548D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3C5135201404D0009548D1 /* Assets.xcassets */; };
 		DD3C5139201404D0009548D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3C5137201404D0009548D1 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		DD14F582200F1FB400B4D331 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		DD2DDE082026348C001FC804 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DD3C512F201404D0009548D1 /* ClimateLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClimateLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3C5131201404D0009548D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD3C5135201404D0009548D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2DDE092026348C001FC804 /* WebKit.framework in Frameworks */,
 				DD3C514620140631009548D1 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +128,7 @@
 		DD3C514420140630009548D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD2DDE082026348C001FC804 /* WebKit.framework */,
 				DD3C514520140631009548D1 /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
@@ -569,6 +573,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ClimateControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benperkins.ClimateControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -584,6 +589,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ClimateControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benperkins.ClimateControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

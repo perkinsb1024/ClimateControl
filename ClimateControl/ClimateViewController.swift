@@ -13,8 +13,9 @@ import Cocoa
 import WebKit
 import ServiceManagement
 
-class ClimateViewController: NSViewController, WKUIDelegate, WKNavigationDelegate {
-    @IBOutlet var webView: WKWebView!
+class ClimateViewController: NSViewController {
+//    @IBOutlet var webView: WkWebView!
+    @IBOutlet var webView: WebView!
     @IBOutlet var zoomLabel: NSTextField!
     var zoom: CGFloat = 1
     var settingsMenu = NSMenu()
@@ -116,21 +117,10 @@ class ClimateViewController: NSViewController, WKUIDelegate, WKNavigationDelegat
             print("Invalid URL")
             return;
         }
-        webView.load(URLRequest(url: safeUrl))
-    }
-    
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         
-    }
-    
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print(error.localizedDescription)
-    }
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        print("Start loading")
-    }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Finish loading")
+        let request = URLRequest(url: safeUrl);
+        webView.mainFrame.load(request);
+//        webView.load(URLRequest(url: safeUrl))
     }
     
     @IBAction func reloadButtonPressed(_ sender: NSButton) {
@@ -141,45 +131,7 @@ class ClimateViewController: NSViewController, WKUIDelegate, WKNavigationDelegat
         loadWebPage(withUrl: "https://home.nest.com/login")
     }
     
-    @IBAction func handleZoomSlider(_ sender: NSSlider) {
-        let triggerEvent = NSApplication.shared.currentEvent
-        var zoom = sender.doubleValue
-        if(zoom < 0.25) {
-            zoom = 0.25
-        }
-        else if(zoom > 2) {
-            zoom = 2
-        }
-        if(zoom >= 0.9 && zoom <= 1.1) {
-            zoom = 1
-        }
-        sender.doubleValue = zoom
-        webView.magnification = CGFloat(zoom)
-        if(triggerEvent?.type == .leftMouseUp) {
-            zoomLabel.stringValue = "Zoom"
-        }
-        else {
-            zoomLabel.stringValue = String.localizedStringWithFormat("%0.2f", zoom)
-        }
-        //        let script = "document.body.style.zoom = \(zoom)"
-        //        let script =
-        //            "var viewport = document.querySelector(\"meta[name=viewport]\");" +
-        //        "viewport.setAttribute('content', 'width=device-width, initial-scale=\(zoom), user-scalable=0');"
-        //        webView.evaluateJavaScript(script) { (result, error) in
-        //            if error != nil {
-        //                print(error!.localizedDescription)
-        //            }
-        //        }
-        //        webView.enclosingScrollView!.magnification = CGFloat(zoom)
-        //        webView.setMagnification(CGFloat(zoom), centeredAt: CGPoint(x: 0, y: 0))
-    }
-    
     @IBAction func handleSettingButtonClick(_ sender: NSButton) {
-        print("Settings")
-        
-//        NSMenu.popUpContextMenu(settingsMenu, with: NSEvent.mouseEvent(with: NSEvent.EventType.leftMouseDown, location: NSPoint(x: 800, y: -800), modifierFlags: NSEvent.ModifierFlags.control, timestamp: TimeInterval(), windowNumber: 0, context: nil, eventNumber: 0, clickCount: 1, pressure: 1)!, for: self.view)
-        
-        // [theMenu popUpMenuPositioningItem:nil atLocation:[NSEvent mouseLocation] inView:nil];
         settingsMenu.popUp(positioning: nil, at: NSPoint(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y - 20), in: nil)
     }
 }
@@ -199,3 +151,21 @@ extension ClimateViewController {
         return viewController
     }
 }
+
+/*
+extension ClimateViewController : WKUIDelegate, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
+    }
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("Start loading")
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("Finish loading")
+    }
+}
+*/

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="13771"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -689,20 +690,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="494"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <wkWebView autoresizesSubviews="NO" wantsLayer="YES" allowsMagnification="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qw7-br-9Ul">
-                                <rect key="frame" x="0.0" y="32" width="480" height="462"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="480" id="ijA-25-USF"/>
-                                </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO"/>
-                                </wkWebViewConfiguration>
-                                <connections>
-                                    <outlet property="UIDelegate" destination="XfG-lQ-9wD" id="C07-KO-5Nk"/>
-                                    <outlet property="navigationDelegate" destination="XfG-lQ-9wD" id="OO4-g4-iCv"/>
-                                </connections>
-                            </wkWebView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mf8-y9-bGJ">
                                 <rect key="frame" x="103" y="-1" width="82" height="32"/>
                                 <buttonCell key="cell" type="push" title="Reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SD3-q1-k9h">
@@ -733,22 +720,29 @@
                                     <action selector="handleSettingButtonClick:" target="XfG-lQ-9wD" id="l3b-P1-Hv3"/>
                                 </connections>
                             </button>
+                            <webView translatesAutoresizingMaskIntoConstraints="NO" id="Sls-Pt-nRu">
+                                <rect key="frame" x="0.0" y="32" width="480" height="462"/>
+                                <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                                    <nil key="identifier"/>
+                                </webPreferences>
+                            </webView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Qw7-br-9Ul" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="2Ks-UB-hYs"/>
-                            <constraint firstItem="Qw7-br-9Ul" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="3if-JY-XsD"/>
                             <constraint firstItem="mf8-y9-bGJ" firstAttribute="leading" secondItem="CuH-8E-6q4" secondAttribute="trailing" constant="12" id="45M-9c-eBy"/>
-                            <constraint firstAttribute="trailing" secondItem="Qw7-br-9Ul" secondAttribute="trailing" id="d0E-JY-oB2"/>
-                            <constraint firstItem="CuH-8E-6q4" firstAttribute="top" secondItem="Qw7-br-9Ul" secondAttribute="bottom" constant="5" id="fMW-uA-Ujz"/>
+                            <constraint firstAttribute="bottom" secondItem="Sls-Pt-nRu" secondAttribute="bottom" constant="32" id="KdP-0l-d2w"/>
+                            <constraint firstAttribute="trailing" secondItem="Sls-Pt-nRu" secondAttribute="trailing" id="Nfn-zT-bRa"/>
+                            <constraint firstItem="Sls-Pt-nRu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="PlL-u7-50u"/>
+                            <constraint firstItem="ooU-38-AuK" firstAttribute="top" secondItem="Sls-Pt-nRu" secondAttribute="bottom" constant="5" id="aL7-he-0cA"/>
                             <constraint firstItem="CuH-8E-6q4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="jJj-1Y-K1I"/>
                             <constraint firstItem="ooU-38-AuK" firstAttribute="centerY" secondItem="mf8-y9-bGJ" secondAttribute="centerY" id="kC2-wq-0Xf"/>
                             <constraint firstAttribute="trailing" secondItem="ooU-38-AuK" secondAttribute="trailing" constant="20" id="mEm-p2-IDx"/>
+                            <constraint firstItem="Sls-Pt-nRu" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="wDK-4a-7Kg"/>
                             <constraint firstAttribute="bottom" secondItem="CuH-8E-6q4" secondAttribute="bottom" constant="6" id="xv8-gS-NE7"/>
                             <constraint firstItem="mf8-y9-bGJ" firstAttribute="centerY" secondItem="CuH-8E-6q4" secondAttribute="centerY" id="ySh-fv-Jiq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="Qw7-br-9Ul" id="aIT-5B-O1B"/>
+                        <outlet property="webView" destination="Sls-Pt-nRu" id="ufm-Bd-kBT"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
